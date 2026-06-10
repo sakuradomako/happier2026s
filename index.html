@@ -84,7 +84,7 @@ function getDayIndex() {
   var m = jst.getUTCMonth();
   var d = jst.getUTCDate();
   var today = new Date(Date.UTC(y, m, d));
-  var start = new Date(Date.UTC(2026, 5, 1)); // 2025-06-01
+  var start = new Date(Date.UTC(2026, 5, 1)); // 2026-06-01
   var diff = Math.floor((today - start) / (1000*60*60*24));
   return Math.max(0, Math.min(diff, 20));
 }
@@ -134,8 +134,8 @@ function render() {
   html += '</div>';
   html += '<div class="day-badge">' + (idx+1) + '日目 / 21日間</div>';
   html += '<div class="progress-wrap"><div class="progress-bar"><div class="progress-fill" style="width:' + progress + '%"></div></div><div class="progress-label">' + progress + '% 完了</div></div>';
-  html += '<div class="card"><div class="card-label">今日のチャレンジ ①</div><div class="card-body">' + d.challenge + '</div><button class="copy-btn" onclick="copyChallenge()">📋 ①をコピー</button></div>';
-  html += '<div class="card"><div class="card-label">今日のメッセージ ②</div><div class="card-body">' + d.message + '</div><button class="copy-btn" onclick="copyMessage()">📋 ②をコピー</button></div>';
+  html += '<div class="card"><div class="card-label">今日のチャレンジ </div><div class="card-body">' + d.challenge + '</div><button class="copy-btn" onclick="copyChallenge()">📋 ①をコピー</button></div>';
+  html += '<div class="card"><div class="card-label">今日のメッセージ </div><div class="card-body">' + d.message + '</div><button class="copy-btn" onclick="copyMessage()">📋 ②をコピー</button></div>';
   html += '<div class="full-card"><div class="card-label">LINE投稿用・全文</div><div class="full-preview">' + fullText.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/\n/g,'<br>') + '</div><button class="full-copy-btn" onclick="copyFull()">📲 全文をコピーしてLINEに貼る</button></div>';
 
   document.getElementById('main-content').innerHTML = html;
