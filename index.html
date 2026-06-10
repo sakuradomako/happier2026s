@@ -91,7 +91,7 @@ function getDayIndex() {
 
 function buildFullText(idx) {
   var d = data[idx];
-  return "【今日の冷蔵庫チャレンジ】\n①" + d.challenge + "\n\n▼アウトプットフォーム\n（コンプリート賞の対象です♡）\n" + FORM_URL + "\n\n②" + d.message + "\n\n完了したら、\nリアクションで教えてね〜🎶";
+  return "【今日の冷蔵庫チャレンジ】\n" + d.challenge + "\n\n▼アウトプットフォーム\n（コンプリート賞の対象です♡）\n" + FORM_URL + "\n\n②" + d.message + "\n\n完了したら、\nリアクションで教えてね〜🎶";
 }
 
 var currentDay = getDayIndex();
@@ -139,7 +139,7 @@ function render() {
   html += '<div class="full-card"><div class="card-label">LINE投稿用・全文</div><div class="full-preview">' + fullText.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/\n/g,'<br>') + '</div><button class="full-copy-btn" onclick="copyFull()">📲 全文をコピーしてLINEに貼る</button></div>';
 
   document.getElementById('main-content').innerHTML = html;
-  window._cur_challenge = '①' + d.challenge;
+  window._cur_challenge = '' + d.challenge;
   window._cur_message = d.message;
   window._cur_full = fullText;
 }
