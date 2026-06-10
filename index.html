@@ -91,7 +91,7 @@ function getDayIndex() {
 
 function buildFullText(idx) {
   var d = data[idx];
-  return "【今日の冷蔵庫チャレンジ】\n" + d.challenge + "\n\n▼アウトプットフォーム\n（コンプリート賞の対象です♡）\n" + FORM_URL + "\n\n②" + d.message + "\n\n完了したら、\nリアクションで教えてね〜🎶";
+  return "【今日の冷蔵庫チャレンジ】\n" + d.challenge + "\n\n▼アウトプットフォーム\n（コンプリート賞の対象です♡）\n" + FORM_URL + "\n\n" + d.message + "\n\n完了したら、\nリアクションで教えてね〜🎶";
 }
 
 var currentDay = getDayIndex();
